@@ -23,16 +23,17 @@ def uppercase(str):
 
 
 def uppercase(str):
+    separator = "\n"
     if len(str) == 0:
-        print("\n")
+        print("{0:s}".format(separator), end=separator)
         return 1
     output = ""
     for i in str:
         value = ord(i)
         if value < 97 or value > 122:
-            output += "{0:c}".format(value)
+            output += chr(value)
         else:
             value = value - 32
-            output += "{0:c}".format(value)
-    print(output)
+            output += chr(value)
+    print("{0:s}".format(output), end=separator)
     return 0
