@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def uppercase(str):
+    if len(str) == 0:
+        return "\n"
     for i in range(0, len(str)):
         value = ord(str[i])
         separator = "\n"
