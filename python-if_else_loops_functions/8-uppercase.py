@@ -12,7 +12,4 @@ def uppercase(str):
         else:
             value = value - 32
             print("{0:c}".format(value), end=separator)
-    if len(str) == 0:
-        print("{}".format("\n"), end="\n")
-    else:
-        return 0
+    return 0
