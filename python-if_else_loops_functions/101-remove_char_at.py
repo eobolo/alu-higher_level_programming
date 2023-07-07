@@ -4,7 +4,7 @@ def remove_char_at(string, n):
 
     for i in range(0, len(string)):
         if i == n:
-            __strcpy__ += " "
+            __strcpy__ += ""
         else:
             __strcpy__ += string[i]
     return __strcpy__
