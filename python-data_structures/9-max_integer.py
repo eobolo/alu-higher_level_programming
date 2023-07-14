@@ -11,4 +11,4 @@ def max_integer(my_list=[]):
             if maximum > i:
                 continue
             maximum = i
-    return maximum
+        return maximum
