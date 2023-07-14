@@ -4,7 +4,7 @@ def max_integer(my_list=[]):
     # since we want to find the maximum of a list
     # we don't want a value for maximum to be larger than max in a list
     maximum = -10
-    if my_list == "":
+    if len(my_list) == 0:
         return None
     else:
         for i in my_list:
