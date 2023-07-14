@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     if matrix == None:
         return 1
