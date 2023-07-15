@@ -4,7 +4,7 @@ def roman_to_int(roman_string):
                 'C': 100, 'D': 500, 'M': 1000}
     roman_sum = 0
     if type(roman_string) == "str" or roman_string is None:
-        return roman_sum
+        return 0
 
     if len(roman_string) % 2 == 0:
         for i in range(0, len(roman_string), 2):
