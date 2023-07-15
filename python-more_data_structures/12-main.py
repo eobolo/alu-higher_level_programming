@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+""" Roman to Integer test file
+"""
+roman_to_int = __import__('12-roman_to_int').roman_to_int
+roman_number = "IX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "DCCVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "X"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "VII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "LXXXVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "III"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "VIII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "XII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "XXV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "XLVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "LXXIX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "XLV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "CXCIV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "DXII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "MCCXXVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "MMCMXCIX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "CMXCIX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "CDXLIV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "MMCMXCIX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "DCCCLXXXVIII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "MMCDLXXXV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
