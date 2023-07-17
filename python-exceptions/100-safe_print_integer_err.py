@@ -5,4 +5,4 @@ def safe_print_integer_err(value):
         return True
     except Exception as err_message:
         print("Exception: {}".format(err_message))
-        return False
+    return False
