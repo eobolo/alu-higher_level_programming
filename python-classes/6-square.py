@@ -72,8 +72,8 @@ class Square():
                         positive integers")
             else:
                 self.__position = value
-        except TypeError:
-            raise
+        except TypeError as e:
+            print("{0:s}".format(e))
 
     def area(self):
         """This returns the Area of the square
