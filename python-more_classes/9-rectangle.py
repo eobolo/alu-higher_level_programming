@@ -143,6 +143,13 @@ class Rectangle():
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """
+        This is a static method that
+        check which tweo objects are bigger
+        or equal to one another and raise error
+        if they don't exist and return the object
+        necessary.
+        """
         try:
             if not isinstance(rect_1, Rectangle):
                 raise TypeError("rect_1 must be an instance of Rectangle")
@@ -160,4 +167,9 @@ class Rectangle():
 
     @classmethod
     def square(cls, size=0):
+        """
+        This is a class method
+        which is used to create
+        another instance of a class
+        """
         return cls(size, size)
