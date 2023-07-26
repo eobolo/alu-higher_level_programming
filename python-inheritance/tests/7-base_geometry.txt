@@ -1,0 +1,60 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bool = isinstance(bg, BaseGeometry)
+>>> try:
+... 	bg.area()
+... except Exception as e:
+... 	value = str(e)
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     value = str(e)
+>>> try:
+...     bg.integer_validator("age")
+... except Exception as e:
+...     value = str(e)
+>>> bg1 = BaseGeometry()
+>>> try:
+...     bg1.integer_validator("age", 1)
+... except Exception as e:
+...     value = str(e)
+>>> bg2 = BaseGeometry()
+>>> try:
+...     bg2.integer_validator("age", 0)
+... except Exception as e:
+...     value = str(e)
+>>> bg3 = BaseGeometry()
+>>> try:
+...     bg3.integer_validator("age", -4)
+... except Exception as e:
+...     value = str(e)
+>>> bg4 = BaseGeometry()
+>>> try:
+...     bg4.integer_validator("age", "4")
+... except Exception as e:
+...     value = str(e)
+>>> bg5 = BaseGeometry()
+>>> try:
+...     bg5.integer_validator("age", (4,))
+... except Exception as e:
+...     value = str(e)
+>>> bg6 = BaseGeometry()
+>>> try:
+...     bg6.integer_validator("age", [3])
+... except Exception as e:
+...     value = str(e)
+>>> bg7 = BaseGeometry()
+>>> try:
+...     bg7.integer_validator("age", True)
+... except Exception as e:
+...     value = str(e)
+>>> bg8 = BaseGeometry()
+>>> try:
+...     bg8.integer_validator("age", {3, 4})
+... except Exception as e:
+...     value = str(e)
+>>> bg9 = BaseGeometry()
+>>> try:
+...     bg9.integer_validator("age", None)
+... except Exception as e:
+...     value = str(e)
