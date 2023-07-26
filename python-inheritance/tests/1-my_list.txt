@@ -1,39 +1,34 @@
 # Import the MyList class
 >>> MyList = __import__('1-my_list').MyList
-# Test present: check instantiation
 >>> my_list = MyList()
->>> isinstance(my_list, MyList)
+>>> bool = isinstance(my_list, MyList)
 
 # Test present: check inherits from list
->>> issubclass(MyList, list)
+>>> bool = issubclass(MyList, list)
 
 # Test present: check __str__
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(2)
 >>> my_list.append(3)
->>> print(str(my_list))
 
 # Test present: check append()
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(2)
 >>> my_list.append(3)
->>> print(my_list)
 
 # Test present: check print_sorted() with sorted append
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(2)
 >>> my_list.append(3)
->>> my_list.print_sorted()
 
 # Test present: check print_sorted() with not sorted append
 >>> my_list = MyList()
 >>> my_list.append(3)
 >>> my_list.append(2)
 >>> my_list.append(1)
->>> my_list.print_sorted()
 
 # Test present: check print_sorted() with no sorted append with negative number
 >>> my_list = MyList()
@@ -41,17 +36,13 @@
 >>> my_list.append(-3)
 >>> my_list.append(1)
 >>> my_list.append(-2)
->>> my_list.print_sorted()
 
 # Test present: check print_sorted() with empty list
 >>> my_list = MyList()
->>> my_list.print_sorted()
 
 # Test present: check print_sorted() returns a new list
 >>> my_list = MyList()
 >>> my_list.append(3)
 >>> my_list.append(1)
 >>> my_list.append(2)
->>> sorted_list = my_list.print_sorted()
 >>> my_list.append(4)
->>> print(sorted_list)

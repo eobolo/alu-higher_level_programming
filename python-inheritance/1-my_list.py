@@ -26,4 +26,6 @@ class MyList(list):
         and the method .sort() and sorts
         the instance not in place
         """
-        print(sorted(self))
+        sorted_list = sorted(self)
+        print(sorted_list)
+        return sorted_list
