@@ -1,5 +1,5 @@
 # Import the MyList class
->>> MyList = __import__('1-my_list').MyList
+>>> MyList = __import__('2-my_list').MyList
 >>> my_list = MyList()
 >>> bool = isinstance(my_list, MyList)
 
