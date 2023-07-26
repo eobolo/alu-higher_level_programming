@@ -15,6 +15,9 @@ class MyList(list):
     an creates a sorted function
     """
     # An initialization method of an empty list is done by the parent class
+    def __init__(self):
+        super().__init__()
+
     def print_sorted(self):
         """This is the sorted function
         that sorts the the the instance
