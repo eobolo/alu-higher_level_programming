@@ -1,6 +1,7 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 >>> bg = BaseGeometry()
->>> bool = isinstance(bg, BaseGeometry)
+
 >>> try:
 ... 	bg.area()
 ... except Exception as e:
