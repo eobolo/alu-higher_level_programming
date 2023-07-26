@@ -1,0 +1,50 @@
+# check instantiation
+my_list1 = MyList()
+isinstance(my_list1, MyList)
+# check inheritance
+issubclass(MyList, list)
+# check __str__
+my_list2 = MyList()
+print(str(my_list2))
+# check append
+my_list3 = MyList()
+my_list3.append(20)
+my_list3.append(13)
+my_list3.append(25)
+print(my_list3)
+# check sorted append
+my_list4 = MyList()
+my_list4.append(1)
+my_list4.append(2)
+my_list4.append(3)
+my_list4.append(4)
+my_list4.print_sorted()
+# check not sorted append
+my_list5 = MyList()
+my_list5.append(2)
+my_list5.append(1)
+my_list5.append(3)
+my_list5.append(20)
+my_list5.append(15)
+my_list5.print_sorted()
+# check not sorted with negative number
+my_list6 = MyList()
+my_list6.append(20)
+my_list6.append(-10)
+my_list6.append(3)
+my_list6.append(2)
+my_list6.append(-4)
+my_list6.append(-3)
+my_list6.append(-25)
+my_list6.append(1)
+my_list6.print_sorted()
+# check empty list
+my_list7 = MyList()
+my_list7.print_sorted()
+# check if print_sorted() returns a new list
+my_list8 = My_list()
+my_list8.append(25)
+my_list8.append(34)
+my_list8.append(4)
+my_list8.append(2)
+my_list8.print_sorted()
