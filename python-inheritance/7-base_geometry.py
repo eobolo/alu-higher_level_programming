@@ -10,8 +10,10 @@ class BaseGeometry():
     """An empty class
     called BaseGeometry
     """
+    __count = 0
     def __init__(self):
-        pass
+        type(self).__count += 1
+        self.count = BaseGeometry.__count
 
     def area(self):
         raise Exception("area() is not implemented")
