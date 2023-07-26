@@ -4,11 +4,12 @@
 thats checks if a class is
 a sub class of another class
 """
+
+
 def inherits_from(obj, a_class):
-    """The function doing the
-    test
+    """The function checking
+    for the inheritance on an object
     """
-    if isinstance(obj, a_class) and issubclass(obj.__class__, a_class):
+    if  issubclass(obj.__class__, a_class):
         return True
-    else:
-        False
+    return False
