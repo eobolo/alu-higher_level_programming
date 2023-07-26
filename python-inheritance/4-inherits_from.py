@@ -10,7 +10,6 @@ def inherits_from(obj, a_class):
     """The function checking
     for the inheritance on an object
     """
-    if issubclass(obj.__class__, a_class) and \
-            issubclass(obj.__class__, a_class.__bases__):
+    if issubclass(obj.__class__, a_class):
         return True
     return False
