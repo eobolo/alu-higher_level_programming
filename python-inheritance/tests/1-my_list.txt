@@ -1,5 +1,5 @@
-#!/usr/bin/python3
-MyList = __import__('1-my_list').MyList
+# Import the MyList class
+>>> MyList = __import__('1-my_list').MyList
 # Test present: check instantiation
 >>> my_list = MyList()
 >>> isinstance(my_list, MyList)
