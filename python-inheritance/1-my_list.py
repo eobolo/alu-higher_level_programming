@@ -18,6 +18,9 @@ class MyList(list):
     def __init__(self):
         super().__init__()
 
+    def append(self, value):
+        super().append(value)
+
     def print_sorted(self):
         """This is the sorted function
         that sorts the the the instance
@@ -29,3 +32,6 @@ class MyList(list):
         sorted_list = sorted(self)
         print(sorted_list)
         return sorted_list
+
+    def __str__(self):
+        return super().__str__()
