@@ -11,11 +11,8 @@ class BaseGeometry():
     called BaseGeometry
     """
     def __init__(self, do_print=False):
-        """
         if do_print:
             self.count = 1
-        """
-        pass
     def area(self):
         raise Exception("area() is not implemented")
 
@@ -26,7 +23,7 @@ class BaseGeometry():
         elif value <= 0:
             raise ValueError(f"{self.name} must be greater than 0")
         else:
-            return value
+            self.value = value
 
 
 class Rectangle(BaseGeometry):
