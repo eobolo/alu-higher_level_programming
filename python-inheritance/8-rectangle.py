@@ -6,14 +6,16 @@ class
 """
 
 
-class BaseGeometry:
+class BaseGeometry():
     """An empty class
     called BaseGeometry
     """
     def __init__(self, do_print=False):
+        """
         if do_print:
             self.count = 1
-
+        """
+        pass
     def area(self):
         raise Exception("area() is not implemented")
 
