@@ -24,7 +24,7 @@ class BaseGeometry():
         elif value <= 0:
             raise ValueError(f"{self.name} must be greater than 0")
         else:
-            self.value = value
+            return value
 
 
 class Rectangle(BaseGeometry):
