@@ -47,7 +47,7 @@ class Rectangle(BaseGeometry):
             return f"[Rectangle] {self.__width}/{self.__height}"
 
 
-class Square(Rectangle, BaseGeometry):
+class Square(Rectangle):
     """This is a class Square
     that inherits from the
     class Rectangle and indirectly
