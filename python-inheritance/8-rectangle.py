@@ -6,10 +6,12 @@ class
 """
 
 
+BaseGeometry = __import__('7-rectangle').BaseGeometry
+"""
 class BaseGeometry():
-    """An empty class
+    An empty class
     called BaseGeometry
-    """
+
     def __init__(self, do_print=False):
         if do_print:
             self.count = 1
@@ -25,6 +27,7 @@ class BaseGeometry():
             raise ValueError(f"{self.name} must be greater than 0")
         else:
             return value
+"""
 
 
 class Rectangle(BaseGeometry):
