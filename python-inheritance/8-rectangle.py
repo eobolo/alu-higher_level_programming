@@ -25,6 +25,8 @@ class BaseGeometry():
             raise ValueError(f"{self.name} must be greater than 0")
         else:
             return value
+
+
 class Rectangle(BaseGeometry):
     """The class Recatangle that
     inherits the class BaseGeometry
