@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 9-student.py
+# 10-student.py
 """This is a python script that
 creates a class and does json
 serialization and deserialization
@@ -7,6 +7,8 @@ serialization and deserialization
 
 
 class_to_json = __import__('8-class_to_json').class_to_json
+
+
 class Student():
     """This is our class student
     with the init() method and a
@@ -21,10 +23,17 @@ class Student():
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """This public method
         serializes and deserializes
         using json
         """
         loads = class_to_json(self)
-        return loads
+        if isinstance(attrs, list):
+            new_dict = {}
+            for i in attrs:
+                if i in loads:
+                    new_dict[i] = loads[i]
+            return new_dict
+        else:
+            return loads

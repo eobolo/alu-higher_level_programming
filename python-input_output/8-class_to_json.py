@@ -7,10 +7,5 @@ does some serialization
 """
 
 
-import json
-
-
 def class_to_json(obj):
-    dumps = json.dumps(obj.__dict__)
-    loads = json.loads(dumps)
-    return loads
+    return obj.__dict__
