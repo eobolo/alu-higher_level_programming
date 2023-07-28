@@ -28,7 +28,7 @@ class Student():
         serializes and deserializes
         using json
         """
-        loads = class_to_json(self)
+        loads = self.__dict__
         if isinstance(attrs, list):
             new_dict = {}
             for i in attrs:
