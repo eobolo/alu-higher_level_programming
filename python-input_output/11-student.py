@@ -6,9 +6,6 @@ serialization and deserialization
 """
 
 
-class_to_json = __import__('8-class_to_json').class_to_json
-
-
 class Student():
     """This is our class student
     with the init() method and a
@@ -28,7 +25,7 @@ class Student():
         serializes and deserializes
         using json
         """
-        loads = class_to_json(self)
+        loads = self.__dict__
         if isinstance(attrs, list):
             new_dict = {}
             for i in attrs:
