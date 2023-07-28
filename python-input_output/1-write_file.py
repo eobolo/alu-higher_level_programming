@@ -15,7 +15,6 @@ def write_file(filename="", text=""):
     appended to the end of the string
     """
     with open(filename, mode="w", encoding="utf-8") as f:
-        if text[len(text) - 1] != "\n":
-            text += "\n"
+        # if text[len(text) - 1] != "\n": text += "\n"
         num_char_written = f.write(text)
         return num_char_written
