@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 This module is a script
 that takes in a URL, sends a request
