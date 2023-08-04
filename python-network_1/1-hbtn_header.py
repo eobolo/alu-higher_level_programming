@@ -7,7 +7,6 @@ using the urllib library
 
 
 from urllib import request, error
-import sys
 try:
     url = sys.argv[1]
     with request.urlopen(url) as response:
