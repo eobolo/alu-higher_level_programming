@@ -7,6 +7,13 @@ using the urllib library
 
 
 from urllib import request, error
+import sys
+"""This module or script
+fetches https://alu-intranet.hbtn.io/status
+using the urllib library
+"""
+
+
 try:
     url = sys.argv[1]
     with request.urlopen(url) as response:
