@@ -1,18 +1,12 @@
 #!/usr/bin/python3
-# 0-hbtn_status.py
-"""This module or script
-fetches https://alu-intranet.hbtn.io/status
-using the urllib library
 """
-
+This module is a script that fetches https://alu-intranet.hbtn.io/status
+using the urllib library and displays the value of the X-Request-Id
+variable found in the header of the response.
+"""
 
 from urllib import request, error
 import sys
-"""This module or script
-fetches https://alu-intranet.hbtn.io/status
-using the urllib library
-"""
-
 
 try:
     url = sys.argv[1]
