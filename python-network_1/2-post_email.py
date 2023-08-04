@@ -27,4 +27,7 @@ if __name__ == "__main__":
 
         # Print the decoded response
         print(response_body)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 692db57f994365216f0df7629f16cbf2abb88c1b
