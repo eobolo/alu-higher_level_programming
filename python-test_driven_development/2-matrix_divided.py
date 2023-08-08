@@ -49,7 +49,7 @@ of integers/floats")
 of integers/floats")
             for value in height:
                 if not isinstance(value, int) and not \
-                    isinstance(value, float):
+                        isinstance(value, float):
                     raise TypeError("matrix must be a matrix (list of lists) \
 of integers/floats")
                 else:
@@ -85,3 +85,12 @@ of integers/floats")
 # print(matrix_divided(matrix, 3))
 # matrix = [[1, 2, 3], [1, 3, 4, 20], [4, 5, 6, 13]]
 # print(matrix_divided(matrix, 3))
+# x = float("inf")
+# matrix = [[1, 2, 3], [4, 5, 6]]
+# print(matrix_divided(matrix, x))
+# matrix = [[1, 2, 3], [4, 5, 6]]
+# print(matrix_divided(matrix))
+# matrix = [[1, 2, 3], [4, 5, 6]]
+# print(matrix_divided(3))
+# matrix = [[1, 2, 3], [4, 5, 6]]
+# print(matrix_divided())
