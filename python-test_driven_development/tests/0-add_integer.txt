@@ -29,3 +29,18 @@ Traceback (most recent call last):
   File "./0-add_integer.py", line 27, in add_integer
     raise TypeError("b must be an integer")
 TypeError: a must be an integer
+>>> x = 1.0e1000
+>>> print(add_integer(x, -2))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+OverflowError: cannot convert float infinity to integer
+>>> x = float('inf')
+>>> print(add_integer(x, -2))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+OverflowError: cannot convert float infinity to integer
+>>> x = float('nan')
+>>> print(add_integer(x, -2))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: cannot convert float NaN to integer
