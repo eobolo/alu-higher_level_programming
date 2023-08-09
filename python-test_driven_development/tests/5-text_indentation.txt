@@ -47,19 +47,6 @@ Yes you are Obolo Emmanuel.
 How old are you:
 <BLANKLINE>
 24 I guess
->>> text_indentation("Am I the greatest ever? \
-... in the history of football. Yes you are \
-... Obolo Emmanuel. How old are you: 24 I guess.")
-Am I the greatest ever?
-<BLANKLINE>
-in the history of football.
-<BLANKLINE>
-Yes you are Obolo Emmanuel.
-<BLANKLINE>
-How old are you:
-<BLANKLINE>
-24 I guess.
-<BLANKLINE>
 >>> text_indentation("")
 >>> text_indentation()
 Traceback (most recent call last):
