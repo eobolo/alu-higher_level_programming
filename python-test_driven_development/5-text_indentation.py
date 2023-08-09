@@ -29,7 +29,7 @@ def text_indentation(text):
             if text[i] in ['?', '.', ':']:
                 new_string += text[i]
                 new_string += "\n\n"
-                if i < len(text) -1 and text[i + 1] != " ":
+                if i < len(text) - 1 and text[i + 1] != " ":
                     i += 1
                 else:
                     i += 2
@@ -47,4 +47,4 @@ def text_indentation(text):
 # text_indentation(None)
 # text_indentation(246)
 # text_indentation("Holberton.School")
-# text_indentation("Holberton. School?How are you:John")
+# text_indentation("Holberton. School? How are you: John")
