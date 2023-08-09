@@ -59,3 +59,4 @@ def print_square(size):
 # print_square("hello")
 # print_square(None)
 # print_square(-3)
+# print_square()

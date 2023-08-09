@@ -58,3 +58,8 @@ Traceback (most recent call last):
   File "./4-print_square.py", line 37, in print_square
     raise ValueError("size must be >= 0")
 ValueError: size must be >= 0
+>>> print_square()
+Traceback (most recent call last):
+  File "./4-print_square.py", line 62, in <module>
+    print_square()
+TypeError: print_square() missing 1 required positional argument: 'size'
