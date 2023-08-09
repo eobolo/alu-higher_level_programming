@@ -41,7 +41,10 @@ def print_square(size):
                 char += '#'
             if i != size - 1:
                 char += '\n'
-        return print(char)
+        if size == 0:
+            return print()
+        else:
+            return print(char)
     except TypeError:
         raise
     except ValueError:
