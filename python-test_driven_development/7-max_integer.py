@@ -20,7 +20,7 @@ def max_integer(list_data=[]):
             else:
                 continue
         if len(list_data) < 2:
-            return list_data[len(list_data) - 1]
+            raise ValueToSmallError("List element must be greater than 1")
         result = list_data[0]
         i = 1
         while i < len(list_data):
@@ -29,4 +29,6 @@ def max_integer(list_data=[]):
             i += 1
         return result
     except TypeError:
+        raise
+    except ValueToSmallError:
         raise
