@@ -179,9 +179,17 @@ class Rectangle(Base):
         with the character #-
 
         not handling x and y here.
+
+        now taking care of x and y
+
+        in 7.display#1
         """
         shape = ""
+        for _ in range(self.y):
+            print()
         for i in range(self.height):
+            for _ in range(self.x):
+                shape += " "            
             for _ in range(self.width):
                 shape += '#'
             if i != self.height - 1:
