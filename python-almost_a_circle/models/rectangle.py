@@ -161,4 +161,11 @@ class Rectangle(Base):
             return None
 
     def area(self):
+        """
+        the public method def area(self):
+
+        that returns the area value of the
+
+        Rectangle instance.
+        """
         return self.width * self.height
