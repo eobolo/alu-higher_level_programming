@@ -189,7 +189,7 @@ class Rectangle(Base):
             print()
         for i in range(self.height):
             for _ in range(self.x):
-                shape += " "            
+                shape += " "
             for _ in range(self.width):
                 shape += '#'
             if i != self.height - 1:
