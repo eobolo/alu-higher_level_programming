@@ -159,3 +159,6 @@ class Rectangle(Base):
             pass
         else:
             return None
+
+    def area(self):
+        return self.width * self.height
