@@ -66,7 +66,6 @@ class Rectangle(Base):
             self.__y = y
         except Exception as e:
             raise
-        
         super().__init__(id)
 
     @property
