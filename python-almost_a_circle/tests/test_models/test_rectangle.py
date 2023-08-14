@@ -16,9 +16,9 @@ class TestRectangle(unittest.TestCase):
     """
 
     def test_rectangle_with_incomplete_correct_args(self):
-        self.assertEqual(Rectangle(1, 2).id, 3)
-        self.assertEqual(Rectangle(1, 2, 3).id, 4)
-        self.assertEqual(Rectangle(1, 2, 3, 4).id, 5)
+        self.assertEqual(Rectangle(1, 2).id, 5)
+        self.assertEqual(Rectangle(1, 2, 3).id, 6)
+        self.assertEqual(Rectangle(1, 2, 3, 4).id, 7)
 
     def test_rectangle_for_type_error(self):
         with self.assertRaises(TypeError):
@@ -51,3 +51,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(Rectangle(3, 2).area(), 6)
         self.assertEqual(Rectangle(2, 10).area(), 20)
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
+
+    def test_reactangle_display(self):
+        self.assertEqual(Rectangle(4, 6).display(), 0)
+        self.assertEqual(Rectangle(2, 2).display(), 0)

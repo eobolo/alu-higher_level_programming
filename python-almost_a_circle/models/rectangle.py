@@ -169,3 +169,22 @@ class Rectangle(Base):
         Rectangle instance.
         """
         return self.width * self.height
+
+    def display(self):
+        """
+        the public method def display(self):
+
+        that prints in stdout the Rectangle instance
+
+        with the character #-
+
+        not handling x and y here.
+        """
+        shape = ""
+        for i in range(self.height):
+            for _ in range(self.width):
+                shape += '#'
+            if i != self.height - 1:
+                shape += '\n'
+        print(shape)
+        return 0
