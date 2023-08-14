@@ -46,27 +46,28 @@ class Rectangle(Base):
 
         Assigns each argument width, height, x and y to the right attribute
         """
-        super().__init__(id)
         try:
             self.width = width
             self.__width = width
         except Exception as e:
-            print(e)
+            raise
         try:
             self.height = height
             self.__height = height
         except Exception as e:
-            print(e)
+            raise
         try:
             self.x = x
             self.__x = x
         except Exception as e:
-            print(e)
+            raise
         try:
             self.y = y
             self.__y = y
         except Exception as e:
-            print(e)
+            raise
+        
+        super().__init__(id)
 
     @property
     def width(self):
@@ -76,10 +77,9 @@ class Rectangle(Base):
     def width(self, value):
         try:
             if type(value) is not int:
-                raise TypeError(f"{value} not of type int \
-but of {type(value)}")
+                raise TypeError(f"width must be an integer")
             elif value < 1:
-                raise ValueError(f"{value} should be >= 1.")
+                raise ValueError(f"width must be > 0")
             else:
                 self.__width = value
         except TypeError as e:
@@ -97,10 +97,9 @@ but of {type(value)}")
     def height(self, value):
         try:
             if type(value) is not int:
-                raise TypeError(f"{value} not of type int \
-but of {type(value)}")
+                raise TypeError(f"height must be an integer")
             elif value < 1:
-                raise ValueError(f"{value} should be >= 1.")
+                raise ValueError(f"height must be > 0")
             else:
                 self.__height = value
         except TypeError as e:
@@ -118,11 +117,14 @@ but of {type(value)}")
     def x(self, value):
         try:
             if type(value) is not int:
-                raise TypeError(f"{value} not of type int \
-but of {type(value)}")
+                raise TypeError(f"x must be an integer")
+            elif value < 0:
+                raise ValueError(f"x must be >= 0")
             else:
                 self.__x = value
         except TypeError as e:
+            raise
+        except ValueError as e:
             raise
         except OverflowError as e:
             raise
@@ -135,11 +137,14 @@ but of {type(value)}")
     def y(self, value):
         try:
             if type(value) is not int:
-                raise TypeError(f"{value} not of type int \
-but of {type(value)}")
+                raise TypeError(f"y must be an integer")
+            elif value < 0:
+                raise ValueError(f"y must be >= 0")
             else:
                 self.__y = value
         except TypeError as e:
+            raise
+        except ValueError as e:
             raise
         except OverflowError as e:
             raise

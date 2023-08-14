@@ -27,16 +27,15 @@ if __name__ == "__main__":
     print(r7.id)
 
     r7 = Rectangle(1, "2")
-    print(r7.height)
+    print(r7.x)
+    print(r7.y)
     print(r7.id)
 
     r7 = Rectangle(1, 2, "3")
-    print(r7.x)
+    print(r7.y)
     print(r7.id)
 
     r7 = Rectangle(1, 2, 3, "4")
     # r7.y = -10
     print(r7.y)
     print(r7.id)
-
-    r7 = Rectangle(1, 2, 3, 4, 5)
