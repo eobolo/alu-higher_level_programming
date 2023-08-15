@@ -117,6 +117,31 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        the class method def create(cls, **dictionary)
+
+        that returns an instance with all attributes already set
+
+        **dictionary can be thought of as a double pointer to a dictionary
+
+        To use the update method to assign all attributes,
+
+        you must create a “dummy” instance before
+
+        Create a Rectangle or Square instance with “dummy”
+
+        mandatory attributes (width, height, size, etc.)
+
+        Call update instance method to this “dummy”
+
+        instance to apply your real values
+
+        You must use the method def update(self, *args, **kwargs)
+
+        **dictionary must be used as **kwargs of the method update
+
+        You are not allowed to use eval
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(3, 4)
             update_dummy = dummy.update(**dictionary)
@@ -125,3 +150,38 @@ class Base:
             dummy = cls(4)
             update_dummy = dummy.update(**dictionary)
             return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        the class method def load_from_file(cls)
+
+        that returns a list of instances
+
+        The filename must be: <Class name>.json - example: Rectangle.json
+
+        If the file doesn’t exist, return an empty list
+
+        Otherwise, return a list of instances -
+
+        the type of these instances depends on cls
+
+        (current class using this method)
+
+        You must use the from_json_string and
+
+        create methods (implemented previously)
+        """
+        try:
+            with open(f"{cls.__name__}.json", mode="r", encoding="utf-8") \
+                    as classfile:
+                new_object_list = []
+                data = classfile.read()
+                data = cls.from_json_string(data)
+                for i in range(len(data)):
+                    obj_data = data[i]
+                    obj = cls.create(**obj_data)
+                    new_object_list.append(obj)
+                return new_object_list
+        except FileNotFoundError:
+            return []
