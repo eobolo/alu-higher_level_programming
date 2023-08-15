@@ -15,9 +15,9 @@ class TesSquare(unittest.TestCase):
     class.
     """
     def test_square_with_incomplete_correct_args(self):
-        self.assertEqual(Square(1).id, 4)
-        self.assertEqual(Square(1, 2).id, 5)
-        self.assertEqual(Square(1, 2, 3).id, 6)
+        self.assertEqual(Square(1).id, 5)
+        self.assertEqual(Square(1, 2).id, 6)
+        self.assertEqual(Square(1, 2, 3).id, 7)
         
     def test_square_for_type_error(self):
         with self.assertRaises(TypeError):
@@ -45,3 +45,16 @@ class TesSquare(unittest.TestCase):
         self.assertEqual(Square(2, 2).__str__(), "[Square] (2) 2/0 - 2")
         self.assertEqual(Square(3, 1, 3).__str__(), "[Square] (3) 1/3 - 3")
         self.assertEqual(Square(3, 1, 3, 6).__str__(), "[Square] (6) 1/3 - 3")
+
+    def test_square_update(self):
+        s1 = Square(5)
+        self.assertEqual(s1.update(10), 0)
+        self.assertEqual(s1.update(1, 2), 0)
+        self.assertEqual(s1.update(1, 2, 3), 0)
+        self.assertEqual(s1.update(1, 2, 3, 4), 0)
+        self.assertEqual(s1.update(), 1)
+        self.assertEqual(s1.update(**{ 'id': 89 }), 0)
+        self.assertEqual(s1.update(**{ 'id': 89, 'size': 1 }), 0)
+        self.assertEqual(s1.update(**{ 'id': 89, 'size': 1, 'x': 2 }), 0)
+        self.assertEqual(s1.update(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 }), 0)
+        self.assertEqual(s1.update(10, 3, x=1, size=2, y=3), 0)

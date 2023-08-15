@@ -15,10 +15,13 @@ class TestRectangle(unittest.TestCase):
     class.
     """
 
-    def test_rectangle_with_incomplete_correct_args(self):
-        self.assertEqual(Rectangle(1, 2).id, 13)
-        self.assertEqual(Rectangle(1, 2, 3).id, 14)
-        self.assertEqual(Rectangle(1, 2, 3, 4).id, 15)
+    def test_rectangle_base_with_incomplete_correct_args(self):
+        self.base1 = Rectangle(1, 2)
+        self.base2 = Rectangle(1, 2, 3)
+        self.base3 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(self.base1.id, 3)
+        self.assertEqual(self.base2.id, 4)
+        self.assertEqual(self.base3.id, 5)
 
     def test_rectangle_for_type_error(self):
         with self.assertRaises(TypeError):
@@ -31,7 +34,8 @@ class TestRectangle(unittest.TestCase):
             Rectangle(1, 2, 3, "4")
 
     def test_reactangle_with_complete_correct_args(self):
-        self.assertEqual(Rectangle(1, 2, 3, 4, 5).id, 5)
+        self.base4 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(self.base4.id, 5)
 
     def test_rectangle_for_value_error(self):
         with self.assertRaises(ValueError):
@@ -52,7 +56,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(Rectangle(2, 10).area(), 20)
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
 
-    def test_reactangle_display(self):
+    def test_rectangle_display(self):
         self.assertEqual(Rectangle(4, 6).display(), 0)
         self.assertEqual(Rectangle(2, 2).display(), 0)
         self.assertEqual(Rectangle(2, 3, 2, 2).display(), 0)
@@ -64,7 +68,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_string_display(self):
         self.assertEqual(Rectangle(4, 6, 2, 1, 12).__str__(), "[Rectangle] (12) 2/1 - 4/6")
-        self.assertEqual(Rectangle(5, 5, 1).__str__(), "[Rectangle] (11) 1/0 - 5/5")
+        self.assertEqual(Rectangle(5, 5, 1).__str__(), "[Rectangle] (14) 1/0 - 5/5")
 
     def test_rectangle_update(self):
         r1 = Rectangle(10, 10, 10, 10)
@@ -84,3 +88,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.update(10, 3, 10, x=1, height=2, y=3, width=4), 0)
         self.assertEqual(r1.update(35, 3, 4, 3, x=1, height=2, y=3, width=4), 0)
         self.assertEqual(r1.update(25, 7, 5, 1, 2, x=1, height=2, y=3, width=4), 0)
+
+    def test_rectangle_to_dictionary(self):
+        r1 = Rectangle(10, 2, 1, 9)
+        self.assertDictEqual(r1.to_dictionary(), r1.to_dictionary())
