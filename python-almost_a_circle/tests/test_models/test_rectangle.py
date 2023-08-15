@@ -3,6 +3,7 @@
 """
 
 import unittest
+import os
 from models.rectangle import Rectangle
 
 
@@ -68,7 +69,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_string_display(self):
         self.assertEqual(Rectangle(4, 6, 2, 1, 12).__str__(), "[Rectangle] (12) 2/1 - 4/6")
-        self.assertEqual(Rectangle(5, 5, 1).__str__(), "[Rectangle] (15) 1/0 - 5/5")
+        self.assertEqual(Rectangle(5, 5, 1).__str__(), "[Rectangle] (21) 1/0 - 5/5")
 
     def test_rectangle_update(self):
         r1 = Rectangle(10, 10, 10, 10)
@@ -112,3 +113,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.id, 89)
         self.assertEqual(r4.id, 89)
         self.assertEqual(r5.id, 89)
+
+    def test_rectangle_load_to_file(self):
+        r1 = Rectangle(10, 7, 2, 8, 3)
+        list_rectangles_input = [r1]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_exist = Rectangle.load_from_file()
+        self.assertEqual(list_rectangles_exist[0].id, 3)
+        os.remove("Rectangle.json")
+        list_rectangles_non_exist = Rectangle.load_from_file()
+        self.assertEqual(list_rectangles_non_exist, [])

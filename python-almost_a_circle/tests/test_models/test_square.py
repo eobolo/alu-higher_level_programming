@@ -3,6 +3,7 @@
 """
 
 import unittest
+import os
 from models.square import Square
 
 
@@ -18,9 +19,9 @@ class TesSquare(unittest.TestCase):
         self.base1 = Square(1)
         self.base2 = Square(1, 2)
         self.base3 = Square(1, 2, 3)
-        self.assertEqual(self.base1.id, 8)
-        self.assertEqual(self.base2.id, 9)
-        self.assertEqual(self.base3.id, 10)
+        self.assertEqual(self.base1.id, 13)
+        self.assertEqual(self.base2.id, 14)
+        self.assertEqual(self.base3.id, 15)
         
     def test_square_for_type_error(self):
         with self.assertRaises(TypeError):
@@ -44,9 +45,9 @@ class TesSquare(unittest.TestCase):
             Square(0)
 
     def test_square_string_display(self):
-        self.assertEqual(Square(5).__str__(), "[Square] (2) 0/0 - 5")
-        self.assertEqual(Square(2, 2).__str__(), "[Square] (3) 2/0 - 2")
-        self.assertEqual(Square(3, 1, 3).__str__(), "[Square] (4) 1/3 - 3")
+        self.assertEqual(Square(5).__str__(), "[Square] (7) 0/0 - 5")
+        self.assertEqual(Square(2, 2).__str__(), "[Square] (8) 2/0 - 2")
+        self.assertEqual(Square(3, 1, 3).__str__(), "[Square] (9) 1/3 - 3")
         self.assertEqual(Square(3, 1, 3, 6).__str__(), "[Square] (6) 1/3 - 3")
 
     def test_square_update(self):
@@ -85,3 +86,13 @@ class TesSquare(unittest.TestCase):
         self.assertEqual(s2.id, 89)
         self.assertEqual(s3.id, 89)
         self.assertEqual(s4.id, 89)
+
+    def test_square_load_to_file(self):
+        s1 = Square(10, 7, 2, 8)
+        list_squares_input = [s1]
+        Square.save_to_file(list_squares_input)
+        list_squares_exist = Square.load_from_file()
+        self.assertEqual(list_squares_exist[0].id, 8)
+        os.remove("Square.json")
+        list_squares_non_exist = Square.load_from_file()
+        self.assertEqual(list_squares_non_exist, [])
