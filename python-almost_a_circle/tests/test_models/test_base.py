@@ -35,9 +35,12 @@ class TestBase(unittest.TestCase):
 
         given consecutively after initialization
         """
-        self.assertEqual(Base().id, 1)
-        self.assertEqual(Base().id, 2)
-        self.assertEqual(Base(89).id, 89)
+        self.base1 = Base()
+        self.base2 = Base()
+        self.base3 = Base(89)
+        self.assertEqual(self.base1.id, 1)
+        self.assertEqual(self.base2.id, 2)
+        self.assertEqual(self.base3.id, 89)
 
 
 if __name__ == '__main__':
