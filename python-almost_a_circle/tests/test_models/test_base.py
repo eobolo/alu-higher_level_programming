@@ -10,7 +10,7 @@ in the models/ directory
 
 import unittest
 from models.base import Base
-
+import json
 
 # test_object1 = Base()
 # test_object2 = Base()
@@ -42,6 +42,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.base2.id, 2)
         self.assertEqual(self.base3.id, 89)
 
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_base_json_strings(self):
+        self.base4 = Base.to_json_string(None)
+        self.base5 = Base.to_json_string([])
+        self.base6 = Base.to_json_string([ { 'id': 12 }])
+        self.assertListEqual(json.loads(self.base4), [])
+        self.assertListEqual(json.loads(self.base5), [])
+        self.assertListEqual(json.loads(self.base6), [ { 'id': 12 }])
