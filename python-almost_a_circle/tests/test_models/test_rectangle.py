@@ -100,4 +100,3 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1, 1)
         self.assertEqual(r2, 0)
         self.assertEqual(r3, 0)
-

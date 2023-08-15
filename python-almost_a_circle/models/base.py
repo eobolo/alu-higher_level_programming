@@ -100,3 +100,17 @@ class Base:
                     as classfile:
                 json.dump(data, classfile)
             return 0
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        the static method def from_json_string(json_string)
+
+        that returns the list of the JSON string
+
+        representation json_string
+        """
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
