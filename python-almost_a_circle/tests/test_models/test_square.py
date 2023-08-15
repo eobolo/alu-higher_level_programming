@@ -75,3 +75,13 @@ class TesSquare(unittest.TestCase):
         self.assertEqual(s1, 1)
         self.assertEqual(s2, 0)
         self.assertEqual(s3, 0)
+
+    def test_square_create(self):
+        s1 = Square.create(**{ 'id': 89 })
+        s2 = Square.create(**{ 'id': 89, 'size': 1 })
+        s3 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
+        s4 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s2.id, 89)
+        self.assertEqual(s3.id, 89)
+        self.assertEqual(s4.id, 89)

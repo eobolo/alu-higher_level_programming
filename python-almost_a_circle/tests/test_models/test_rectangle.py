@@ -100,3 +100,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1, 1)
         self.assertEqual(r2, 0)
         self.assertEqual(r3, 0)
+
+    def test_rectangle_create(self):
+        r1 = Rectangle.create(**{ 'id': 89 })
+        r2 = Rectangle.create(**{ 'id': 89, 'width': 1 })
+        r3 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 })
+        r4 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+        r5 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r2.id, 89)
+        self.assertEqual(r3.id, 89)
+        self.assertEqual(r4.id, 89)
+        self.assertEqual(r5.id, 89)
