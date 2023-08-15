@@ -57,9 +57,84 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """The class Square by adding the public getter
+        """
         return self.width
 
     @size.setter
     def size(self, value):
+        """
+        the class Square by adding the public setter size
+
+        The setter should assign (in this order) the width
+
+        and the height - with the same value
+        
+        The setter should have the same value validation
+
+        as the Rectangle for width and height -
+
+        No need to change the exception error
+
+        message (It should be the one from width)
+        """
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """
+        the class Square by adding the public method
+
+        def update(self, *args, **kwargs)
+
+        that assigns attributes:
+
+        *args is the list of arguments - no-keyworded arguments
+
+        1st argument should be the id attribute
+
+        2nd argument should be the size attribute
+
+        3rd argument should be the x attribute
+
+        4th argument should be the y attribute
+
+        **kwargs can be thought of as a double pointer to a dictionary
+
+        key/value (keyworded arguments)
+
+        **kwargs must be skipped if *args exists and is not empty
+
+        Each key in this dictionary represents an attribute to the instance
+        """
+        if len(args) > 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[0]
+                elif i == 1:
+                    self.width = args[1]
+                    self.height = args[1]
+                elif i == 2:
+                    self.x = args[2]
+                else:
+                    self.y = args[3]
+        else:
+            copy_kwargs = dict(kwargs)
+            for _ in range(len(kwargs)):
+                if "size" in kwargs:
+                    self.width = kwargs["size"]
+                    self.height = kwargs["size"]
+                    del kwargs["size"]
+                elif "x" in kwargs:
+                    self.x = kwargs["x"]
+                    del kwargs["x"]
+                elif "y" in kwargs:
+                    self.y = kwargs["y"]
+                    del kwargs["y"]
+                else:
+                    self.id = kwargs["id"]
+                    del kwargs["id"]
+        if len(args) == 0 and len(copy_kwargs) == 0:
+            return 1
+        else:
+            return 0
