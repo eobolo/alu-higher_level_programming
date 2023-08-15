@@ -118,10 +118,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            dummy = cls(3, 4, 2, 3, 5)
+            dummy = cls(3, 4)
             update_dummy = dummy.update(**dictionary)
             return dummy
         else:
-            dummy = cls(4, 2, 3, 4)
+            dummy = cls(4)
             update_dummy = dummy.update(**dictionary)
             return dummy
