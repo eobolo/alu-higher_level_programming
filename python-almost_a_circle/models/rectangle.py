@@ -280,4 +280,3 @@ class Rectangle(Base):
             else:
                 new_dict["id"] = self.id
         return new_dict
-

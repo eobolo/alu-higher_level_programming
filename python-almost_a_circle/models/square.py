@@ -138,3 +138,23 @@ class Square(Rectangle):
             return 1
         else:
             return 0
+
+    def to_dictionary(self):
+        """
+        the class Rectangle by adding the public method
+
+        def to_dictionary(self)
+
+        that returns the dictionary representation of a Rectangle
+        """
+        new_dict = {}
+        for i in range(len(self.__dict__) - 1):
+            if i == 0:
+                new_dict["x"] = self.x
+            elif i == 1:
+                new_dict["y"] = self.y
+            elif i == 2:
+                new_dict["size"] = self.size
+            else:
+                new_dict["id"] = self.id
+        return new_dict
