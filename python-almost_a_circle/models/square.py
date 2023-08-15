@@ -69,7 +69,7 @@ class Square(Rectangle):
         The setter should assign (in this order) the width
 
         and the height - with the same value
-        
+
         The setter should have the same value validation
 
         as the Rectangle for width and height -
