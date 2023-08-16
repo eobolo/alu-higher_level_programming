@@ -116,7 +116,7 @@ class TestRectangle(unittest.TestCase):
         list_rectangles_non_exist = Rectangle.load_from_file()
         self.assertEqual(list_rectangles_non_exist, [])
 
-    def test_rectangle(self):
+    def test_instance(self):
         self.assertIsInstance(Rectangle(3, 4), Rectangle)
         self.assertIsInstance(Rectangle(3, 2, 5), Rectangle)
         self.assertIsInstance(Rectangle(4, 6, 7, 4), Rectangle)
