@@ -17,12 +17,12 @@ class TestRectangle(unittest.TestCase):
     """
 
     def test_rectangle_base_with_incomplete_correct_args(self):
-        self.base1 = Rectangle(1, 2)
-        self.base2 = Rectangle(1, 2, 3)
-        self.base3 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(self.base1.id, 5)
-        self.assertEqual(self.base2.id, 6)
-        self.assertEqual(self.base3.id, 7)
+        r1 = Rectangle(1, 2)
+        r2 = Rectangle(1, 2, 3)
+        r3 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r1.id, 5)
+        self.assertEqual(r2.id, 6)
+        self.assertEqual(r3.id, 7)
 
     def test_rectangle_for_type_error(self):
         with self.assertRaises(TypeError):
