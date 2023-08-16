@@ -16,11 +16,6 @@ class TestRectangle(unittest.TestCase):
     class.
     """
 
-    def test_rectangle(self):
-        self.assertEqual(Rectangle(1, 2).id, 3)
-        self.assertEqual(Rectangle(1, 2, 3).id, 4)
-        self.assertEqual(Rectangle(1, 2, 3, 4).id, 5)
-
     def test_rectangle_for_type_error(self):
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
@@ -120,3 +115,8 @@ class TestRectangle(unittest.TestCase):
         os.remove("Rectangle.json")
         list_rectangles_non_exist = Rectangle.load_from_file()
         self.assertEqual(list_rectangles_non_exist, [])
+
+    def test_rectangle(self):
+        self.assertEqual(Rectangle(1, 2).id, 3)
+        self.assertEqual(Rectangle(1, 2, 3).id, 4)
+        self.assertEqual(Rectangle(1, 2, 3, 4).id, 5)
