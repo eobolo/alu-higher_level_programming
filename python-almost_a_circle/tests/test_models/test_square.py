@@ -7,7 +7,7 @@ import os
 from models.square import Square
 
 
-class TesSquare(unittest.TestCase):
+class TestSquare(unittest.TestCase):
     """
     Our unittest class
 
