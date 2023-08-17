@@ -20,8 +20,9 @@ if __name__ == "__main__":
                                user=sys.argv[1], password=sys.argv[2],
                                database=sys.argv[3], use_unicode=True)
     c = database.cursor()
-    c.execute("""SELECT * FROM states WHERE states.name LIKE 'N%'
-               OR 'n%' ORDER BY states.id ASC;""")
+    c.execute("""SELECT * FROM states WHERE name LIKE BINARY "N%"
+               AND name NOT LIKE BINARY "n%"
+               ORDER BY states.id ASC;""")
     rows = c.fetchall()
     for row in rows:
         print(row)
