@@ -12,17 +12,18 @@ Your code should not be executed when imported
 """
 
 
-import MySQLdb
-import sys
+if __name__ == "__main__":
+    import MySQLdb
+    import sys
 
 
-database = MySQLdb.connect(host="localhost", port=3306,
-                           user=sys.argv[1], password=sys.argv[2],
-                           database=sys.argv[3],
-                           use_unicode=True)
-c = database.cursor()
-c.execute("""SELECT * FROM states ORDER BY states.id;""")
-rows = c.fetchall()
-for row in rows:
-    print(row)
-c.close()
+    database = MySQLdb.connect(host="localhost", port=3306,
+                               user=sys.argv[1], password=sys.argv[2],
+                               database=sys.argv[3],
+                               use_unicode=True)
+    c = database.cursor()
+    c.execute("""SELECT * FROM states ORDER BY states.id;""")
+    rows = c.fetchall()
+    for row in rows:
+        print(row)
+    c.close()
