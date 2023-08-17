@@ -21,7 +21,7 @@ if __name__ == "__main__":
                                database=sys.argv[3], use_unicode=True)
     c = database.cursor()
     c.execute("""SELECT * FROM states WHERE states.name LIKE 'N%'
-               ORDER BY states.id ASC;""")
+               OR 'n%' ORDER BY states.id ASC;""")
     rows = c.fetchall()
     for row in rows:
         print(row)
