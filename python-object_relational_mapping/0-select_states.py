@@ -23,8 +23,7 @@ Your code should not be executed when imported
 import MySQLdb
 import sys
 
-# create a connection to the database
-# based on the users' name, password and database of choice
+
 database = MySQLdb.connect(host="localhost", port=3306,
                            user=sys.argv[1], password=sys.argv[2],
                            database=sys.argv[3],
