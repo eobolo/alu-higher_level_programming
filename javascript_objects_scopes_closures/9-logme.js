@@ -4,11 +4,11 @@ class Calls {
     Calls.number++;
   }
 
-  static number = -1;
   call () {
     return Calls.number;
   }
 }
+Calls.number = -1
 exports.logMe = function (item) {
   const count = new Calls().call();
   console.log(`${count}: ${item}`);
