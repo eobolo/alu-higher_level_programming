@@ -1,10 +1,10 @@
 #!/usr/bin/node
 class Calls {
-  static number = -1;
   constructor () {
     Calls.number++;
   }
 
+  static number = -1;
   call () {
     return Calls.number;
   }
