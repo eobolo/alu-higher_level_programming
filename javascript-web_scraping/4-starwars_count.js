@@ -13,7 +13,8 @@ if (argv[2]) {
       return;
     }
     const id = 18;
-    request(JSON.parse(body).results[0].characters[id - 3], (err, response, body) => {
+    const url = JSON.parse(body).results[0].characters[id - 3];
+    request(url, (err, response, body) => {
       if (err) {
         console.log(err);
         return;
