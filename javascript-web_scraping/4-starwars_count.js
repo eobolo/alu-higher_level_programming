@@ -13,14 +13,19 @@ if (argv[2]) {
       return;
     }
     const id = 18;
-    const url = JSON.parse(body).results[0].characters[id - 3];
-    request(url, (err, response, body) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      console.log(JSON.parse(body).films.length);
-    });
+    try {
+      const parsedData = JSON.parse(body);
+      const url = parsedData.results[0].characters[id - 3];
+      request(url, (err, response, body) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log(JSON.parse(body).films.length);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   });
 } else {
   console.log('An error occured missing url command line arg.');
