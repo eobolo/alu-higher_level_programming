@@ -11,5 +11,5 @@ $('document').ready(function () {
     error: function (jqXHR, textStatus, errorThrown) {
       console.log(`Here is the text status ${textStatus} and error ${errorThrown}`);
     }
-  })
+  });
 });
